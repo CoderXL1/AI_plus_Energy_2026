@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-07",
+  "snapshot_recomputation": "PASS",
+  "cases": 8955,
+  "excluded": 120,
+  "schedules_recomputed": 46350,
+  "algorithm_checks_passed": 12,
+  "existing_run_overwrite_rejected": true,
+  "scientific_source_unchanged": true,
+  "result_tables_and_schedules_unchanged": true,
+  "image_pixels_unchanged_and_metadata_removed": true,
+  "private_path_and_common_secret_pattern_scan": "PASS",
+  "full_training_and_scheduling_rerun_for_publication": false,
+  "scientific_source_sha256": {
+    "forecast.py": "0557609c44caded9b9fef8ecd47138212234152d0f111c05edaad32682e74ecc",
+    "diagnostics.py": "acef59636b2620406fcf24aa66b1d35f834cab5055ec15dede88a3893835f2f3",
+    "download_data.py": "42f0947e84b88c62fa186e5482a02436b8e64830c68b99d295d125d9e250c4f3",
+    "solver_diagnostics.py": "99e0a7211bee3760914a7eed1153ee35d347dee8901ff80bf3074be3901897a5",
+    "scheduler.py": "fdba6560b58c939f8295f6d680a07497b26085940cd5bd5b1792f029f4a0d42a",
+    "verify.py": "39b5c3eda8a01ba43c7c274805a4ac6772d5ad998597ad41f64ce2223b4b9fb9",
+    "run_scheduling.py": "23c4f379d51f4a63ab447b3cf77b0571190b05f24c6bdda5053ad1ac18ca401d",
+    "analyze.py": "9ffcc25d961e3c66cc027fb2673b84105ab07697de52642ddc8979d64af96970",
+    "audit_completion.py": "57a604e1dcbaceb5353353222a4f594e90014f18d59141b4880f813c6a28e243"
+  }
+}

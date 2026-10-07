@@ -1,0 +1,17 @@
+{
+  "completed_cases": 8955,
+  "scored_cases": 8835,
+  "excluded_cases": 120,
+  "scored_schedules": 46350,
+  "unique_solver_results": 27810,
+  "constraint_violations": 0,
+  "max_energy_error_kwh": 0.0,
+  "solver_status_counts": {
+    "0": 27054,
+    "1": 730,
+    "4": 26
+  },
+  "all_peak_recomputations_passed": true,
+  "all_case_keys_unique": true,
+  "planned_cases": 8955
+}

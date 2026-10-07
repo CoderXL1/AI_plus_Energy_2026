@@ -1,0 +1,29 @@
+{
+  "buildings": [
+    "Bull_office_Anne",
+    "Eagle_office_Amanda",
+    "Fox_office_Alice"
+  ],
+  "splits": {
+    "train": {
+      "start": "2016-01-01",
+      "end": "2017-03-13",
+      "days": 438
+    },
+    "tune": {
+      "start": "2017-03-14",
+      "end": "2017-05-25",
+      "days": 73
+    },
+    "calibration": {
+      "start": "2017-05-26",
+      "end": "2017-08-06",
+      "days": 73
+    },
+    "test": {
+      "start": "2017-08-07",
+      "end": "2017-12-31",
+      "days": 147
+    }
+  }
+}

@@ -1,0 +1,42 @@
+# Local environments, caches and editors
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.mplconfig/
+.pip-cache/
+.DS_Store
+._*
+.idea/
+.vscode/
+.codex/
+.agents/
+
+# Credentials and local settings
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+
+# Downloaded inputs, generated contexts and local reruns
+experiments/data/raw/*.csv
+experiments/data/raw/*.part
+experiments/data/processed/
+experiments/results/*.pkl
+experiments/results/models/*.pkl
+runs/
+tmp/
+*.log
+*.zip
+
+# Private application documents and office temporary files
+~$*
+*.docx
+*.doc

@@ -1,0 +1,32 @@
+{
+  "Bull_office_Anne": {
+    "building": "Bull_office_Anne",
+    "risk_weight": 0.25,
+    "shift_penalty": 2.0,
+    "threshold_kw": 0.0,
+    "score": 20.958181818181817,
+    "gain_kw": 21.09090909090909,
+    "recommendation_rate": 1.0,
+    "n_days": 11
+  },
+  "Eagle_office_Amanda": {
+    "building": "Eagle_office_Amanda",
+    "risk_weight": 0.25,
+    "shift_penalty": 0.0,
+    "threshold_kw": 0.0,
+    "score": 0.0,
+    "gain_kw": 0.0,
+    "recommendation_rate": 0.0,
+    "n_days": 11
+  },
+  "Fox_office_Alice": {
+    "building": "Fox_office_Alice",
+    "risk_weight": 0.25,
+    "shift_penalty": 0.5,
+    "threshold_kw": 0.0,
+    "score": 13.24181818181819,
+    "gain_kw": 13.337272727272735,
+    "recommendation_rate": 0.8181818181818182,
+    "n_days": 11
+  }
+}

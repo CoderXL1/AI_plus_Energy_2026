@@ -1,0 +1,4 @@
+building_id,site_id,building_id_kaggle,site_id_kaggle,primaryspaceusage,sub_primaryspaceusage,sqm,sqft,lat,lng,timezone,electricity,hotwater,chilledwater,steam,water,irrigation,solar,gas,industry,subindustry,heatingtype,yearbuilt,date_opened,numberoffloors,occupants,energystarscore,eui,site_eui,source_eui,leed_level,rating
+Fox_office_Alice,Fox,246.0,2.0,Office,Office,18806.8,202435.0,33.42442530000004,-111.9281403999998,US/Mountain,Yes,Yes,Yes,,,,,,Education,College/University,,1967.0,,,,,,,,,
+Bull_office_Anne,Bull,935.0,9.0,Office,Office,1499.0,16135.0,30.26719999999989,-97.7430999999998,US/Central,Yes,,Yes,,,,,,,,,,,,,,,,,,
+Eagle_office_Amanda,Eagle,1304.0,14.0,Office,Office,8487.9,91363.0,,,US/Eastern,Yes,,,,,,,,,,,,,,,,,,,,

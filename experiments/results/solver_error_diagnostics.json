@@ -1,0 +1,236 @@
+[
+  {
+    "key": "Bull_office_Anne|584|10|4|20261006|perturbation|bias_minus_10pct",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.04580112500116229
+  },
+  {
+    "key": "Bull_office_Anne|602|10|4|20261006|perturbation|peak_late_1h",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.016527541971299797
+  },
+  {
+    "key": "Bull_office_Anne|608|10|4|20261006|perturbation|bias_plus_10pct",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.03764554200461134
+  },
+  {
+    "key": "Bull_office_Anne|636|10|4|20261006|perturbation|bias_plus_10pct",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.010595040977932513
+  },
+  {
+    "key": "Bull_office_Anne|636|10|4|20261006|perturbation|peak_early_1h",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.01374812499852851
+  },
+  {
+    "key": "Bull_office_Anne|662|10|4|20261006|perturbation|bias_minus_10pct",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.015530459000729024
+  },
+  {
+    "key": "Bull_office_Anne|672|10|4|20261006|perturbation|peak_early_1h",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.014510875043924898
+  },
+  {
+    "key": "Bull_office_Anne|676|10|4|20261006|baseline|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.18159641698002815
+  },
+  {
+    "key": "Bull_office_Anne|698|10|4|20261006|baseline|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.038889999967068434
+  },
+  {
+    "key": "Bull_office_Anne|700|10|4|20261006|perturbation|bias_plus_10pct",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.00842541694873944
+  },
+  {
+    "key": "Bull_office_Anne|588|5|4|110|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.061341083026491106
+  },
+  {
+    "key": "Bull_office_Anne|588|10|4|108|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.014955916965845972
+  },
+  {
+    "key": "Bull_office_Anne|615|5|2|110|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.004535166022833437
+  },
+  {
+    "key": "Bull_office_Anne|615|5|4|110|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.0037922090268693864
+  },
+  {
+    "key": "Bull_office_Anne|616|5|4|102|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.008568957971874624
+  },
+  {
+    "key": "Bull_office_Anne|616|10|4|108|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.04328233300475404
+  },
+  {
+    "key": "Bull_office_Anne|642|5|4|103|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.007240083010401577
+  },
+  {
+    "key": "Bull_office_Anne|642|5|4|107|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.05591233400627971
+  },
+  {
+    "key": "Bull_office_Anne|642|20|2|107|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.022768499969970435
+  },
+  {
+    "key": "Bull_office_Anne|675|5|8|102|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.05863695900188759
+  },
+  {
+    "key": "Bull_office_Anne|676|10|2|109|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.00207108398899436
+  },
+  {
+    "key": "Bull_office_Anne|676|10|4|108|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.04709254199406132
+  },
+  {
+    "key": "Bull_office_Anne|676|10|8|109|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.051369416003581136
+  },
+  {
+    "key": "Bull_office_Anne|677|10|2|104|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.015540666994638741
+  },
+  {
+    "key": "Bull_office_Anne|677|10|4|108|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.09176233399193734
+  },
+  {
+    "key": "Bull_office_Anne|678|5|2|103|sensitivity|none",
+    "original_status": 4,
+    "original_fallback": true,
+    "replay_status": 4,
+    "message": "(HiGHS Status 4: Solve error)",
+    "replay_feasible": false,
+    "seconds": 0.004671707982197404
+  }
+]

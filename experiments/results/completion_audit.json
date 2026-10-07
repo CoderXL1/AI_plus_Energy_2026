@@ -1,0 +1,16 @@
+{
+  "primary_scope": "second application draft experiments",
+  "baseline_cases": 441,
+  "perturbation_cases": 1764,
+  "scale_flexibility_cases": 6750,
+  "scored_schedules": 46350,
+  "coverage_complete": true,
+  "all_required_method_groups_present": true,
+  "all_6_candidate_searches_present": true,
+  "paired_ci_comparisons": 18,
+  "algorithm_verification_checks": 12,
+  "protocol_unchanged": true,
+  "excluded_reasons": {
+    "missing_actual": 120
+  }
+}

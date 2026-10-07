@@ -1,0 +1,32 @@
+[
+  {
+    "building": "Bull_office_Anne",
+    "opt_first": 511,
+    "opt_last": 546,
+    "screen_first": 547,
+    "screen_last": 583,
+    "test_first": 584,
+    "overlap_days": 0,
+    "training_rolling_last": 437
+  },
+  {
+    "building": "Eagle_office_Amanda",
+    "opt_first": 511,
+    "opt_last": 546,
+    "screen_first": 547,
+    "screen_last": 583,
+    "test_first": 584,
+    "overlap_days": 0,
+    "training_rolling_last": 437
+  },
+  {
+    "building": "Fox_office_Alice",
+    "opt_first": 511,
+    "opt_last": 546,
+    "screen_first": 547,
+    "screen_last": 583,
+    "test_first": 584,
+    "overlap_days": 0,
+    "training_rolling_last": 437
+  }
+]
