@@ -1,24 +1,27 @@
-# 数据来源与复现
+# 数据来源与实验样本
 
-数据来自 Building Data Genome Project 2 作者公开仓库：
-https://github.com/buds-lab/building-data-genome-project-2
+项目使用 Building Data Genome Project 2（BDG2）的公开建筑电表、天气和元数据，覆盖 2016 至 2017 年。建筑历史负荷构成实验背景，预约慢充任务由固定种子的程序生成。
 
-固定提交版本：`9b97ccbe90096aff42ed4fd6493bf7ae692d7118`。
+- 数据仓库：[Building Data Genome Project 2](https://github.com/buds-lab/building-data-genome-project-2)。
+- 固定版本：`9b97ccbe90096aff42ed4fd6493bf7ae692d7118`。
+- 数据文献：Miller C, Kathirgamanathan A, Picchetti B, et al. *The Building Data Genome Project 2, energy meter data from the ASHRAE Great Energy Predictor III competition*. Scientific Data, 2020, 7: 368. DOI: 10.1038/s41597-020-00712-x.
 
-Miller C, Kathirgamanathan A, Picchetti B, et al. The Building Data Genome Project 2, energy meter data from the ASHRAE Great Energy Predictor III competition. Scientific Data, 2020, 7: 368. DOI: 10.1038/s41597-020-00712-x.
+## 样本选择与处理
 
-## 原始数据不提交的安排
+从办公楼中按训练期有效率、正值率及天气完整度筛选，再按公开编号排序，每个站点取第一栋合格建筑，最终选取前三个站点。三栋建筑的公开别名为 `Bull_office_Anne`、`Eagle_office_Amanda` 和 `Fox_office_Alice`，用于关联来源、模型与实验结果。
 
-完整原始电表 CSV 约 174 MB，天气约 19 MB，建筑元数据约 0.27 MB。为避免把与评审无关的大量原始计量放入版本历史，仓库只保留固定下载地址与 SHA256，并由完整重跑入口自动获取。下载后原始文件和中间数据位于被忽略的运行目录。
+负值视为缺失；历史输入前向填补，评分标签保留原始观测。排程评价使用完整的 24 小时背景，120 个缺失背景案例保留排除记录。零读数按固定规则纳入主实验，并通过事后分组诊断分析其影响。
 
-选样规则只使用训练期质量，并在全部候选办公楼之间按公开编号排序。复现选样仍需下载完整的公开输入，不能只用三栋结果切片来替代该步骤。
+## 数据材料
 
-## 仓库中保留的数据
+| 材料 | 内容与用途 |
+| --- | --- |
+| [原始数据清单](experiments/data/raw/manifest.json) | 固定下载地址、文件大小与 SHA256 |
+| `experiments/results/*_forecasts.csv` | 三栋建筑的逐时背景观测与预测 |
+| [选样记录](experiments/results/selection_audit.csv) | 候选建筑质量统计与选中标志 |
+| [逐案例排程](experiments/results/schedule_cases.jsonl) | 仿真任务、启动时刻、求解状态与指标 |
+| [数据许可](experiments/data/raw/LICENSE) | 上游数据许可原文 |
 
-`experiments/results/*_forecasts.csv` 含三栋建筑的逐时背景观测切片及预测；其他结果包括候选筛选统计、任务参数、开始时刻、求解状态和指标。它们是公开数据的派生材料或实验输出，不是用户、团队或真实客户的私人数据。
+完整复现入口自动下载电表数据约 174 MB、天气数据约 19 MB、建筑元数据约 0.27 MB，并校验文件内容。选样复现使用完整公开输入，下载文件与中间数据保存在独立运行目录，操作见 [README](README.md)。
 
-`Bull_office_Anne`、`Eagle_office_Amanda`、`Fox_office_Alice` 是上游数据集公开别名，保留它们用于复核选样与下载对应关系，不是研究成员姓名。没有新增真实地址、个人姓名或联系信息。预约任务由固定种子的程序独立生成，不是实采预约记录。
-
-原始缺失与零读数按固定协议处理。零值事后诊断不改变主结果；120 个缺失背景案例保留排除记录。
-
-原仓库许可原文保存在 [experiments/data/raw/LICENSE](experiments/data/raw/LICENSE)。数据来源和许可说明同时适用于本仓库内对应的公开数据切片及派生材料；原创代码没有因此自动获得同一许可。
+数据署名与许可适用于相应公开数据切片及派生材料，详见 [第三方来源与署名](THIRD_PARTY_NOTICES.md)。

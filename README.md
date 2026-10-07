@@ -1,21 +1,12 @@
-# 园区用能预警与设备排程：可复现实验
+# 园区高峰用能预警与设备排程助手
 
-这是面向技术评审的脱敏实验仓库。任务是使用历史建筑负荷与天气预测未来 24 小时背景功率，再对预约慢充任务进行约束排程，评价日峰值变化。
+项目面向园区充电与用能管理，预测未来 24 小时建筑负荷，识别高负荷时段，并在预约时间、充电位和站内功率约束下安排慢充任务。通过将充电任务移至更合适的时段，在保持任务总能量和按时完成的前提下，降低建筑与充电负荷叠加后的日峰值。
 
-**真实背景数据 + 仿真充电任务**：本项目不是现场设备试验，削峰率不能解释为节能率、实际电费降幅或 15 分钟计费需量改善。
+核心流程为 **负荷预测 → 误差情景生成 → 约束排程 → 独立增益筛选**。系统综合考虑平均峰值、不利情景下的峰值和启动时间调整幅度；候选方案通过增益筛选后输出调整建议，否则沿用原排程。
 
-## 评审入口
+## 实验成果
 
-- [实验报告](reports/实验报告.md)：方法、对照、消融、置信区间、规模与扰动实验、失败案例和局限。
-- [固定实验协议](experiments/config/protocol.json)及[实验口径](experiments/实验方案与口径.md)。
-- [主实验结果](experiments/results/baseline_summary.csv)、[配对置信区间](experiments/results/paired_confidence_intervals.csv)。
-- [全部逐案例任务与排程](experiments/results/schedule_cases.jsonl)、[完整指标表](experiments/results/all_scheduling_metrics.csv)。
-- [完成情况审计](experiments/results/completion_audit.json)、[约束与能量审计](experiments/results/result_audit.json)。
-- [数据来源与署名](DATA.md)、[公开版整理说明](PUBLICATION.md)、[AI 辅助使用记录](reports/AI辅助使用记录.md)。
-
-## 主要结果
-
-共处理 8,955 个案例：441 个基准案例、1,764 个预测扰动案例、6,750 个规模与灵活性案例。其中 120 个因真实背景缺失排除；8,835 个进入评分，共 46,350 条排程评价。
+实验采用 Building Data Genome 2 的三栋办公建筑真实小时级负荷与天气数据，叠加固定种子生成的预约慢充任务。共覆盖 8,955 个案例：441 个基准案例、1,764 个预测扰动案例、6,750 个规模与灵活性案例。扣除 120 个背景观测缺失案例，8,835 个案例进入评分，共评价 46,350 条排程。
 
 | 建筑公开别名 | 完整方法平均日削峰率 | 负向削峰日占比 | 建议输出率 |
 | --- | ---: | ---: | ---: |
@@ -23,21 +14,41 @@
 | Amanda | 0.12% | 0.00% | 3.40% |
 | Alice | 2.75% | 2.72% | 93.88% |
 
-所有评分方案的约束违反次数为 0，任务能量偏差为 0。完整方法并非普遍优于简单方法：CVaR 和温度响应特征未显示跨建筑稳定平均增益，筛选会牺牲部分收益。Amanda 测试期包含大量零读数，报告保留了主结果及单独的事后诊断。
+削峰率衡量小时平均功率的日峰值相对最早可行排程的变化，均值包含保留原方案的日期。所有评分方案均满足时间窗口、充电位、站内功率与任务能量约束，任务按时完成率为 100%。
 
-## 1. 无需下载数据的结果核验
+独立筛选将负向削峰日占比的建筑平均值从 7.48% 降至 0.91%，建议输出率为 65.76%，体现了收益与调整频率的取舍。对照实验同时揭示了场景差异：Amanda 的上周预测排程平均日削峰率更高，CVaR 与温度响应特征的平均增益因建筑而异。完整比较及 Amanda 零读数诊断见实验报告。
 
-在仓库根目录使用 Python 3.12 运行，**仅用标准库，不需要安装科学计算依赖**：
+## 未来应用场景
+
+- **办公园区预约充电**：结合员工离场时间和充电需求，生成次日错峰充电计划，供运营人员审核与执行。
+- **园区能源管理平台**：接入实时计量和设备状态，展示高负荷时段、可调整任务及预计削峰量，支持运行中的滚动调整。
+- **多类柔性设备协同**：在补充设备约束后，将排程对象扩展至储能、蓄冷和可延后运行的设备，协调园区内的用能时序。
+- **光伏消纳与需求响应**：引入光伏预测、电价和响应指令，探索就地消纳、用能成本与峰值控制的联合优化。
+
+后续试点将接入真实预约记录、细粒度计量和变压器余量，验证从日前建议到现场执行的效果。
+
+## 项目材料
+
+- [实验报告](reports/实验报告.md)：方法、对照结果、案例分析与应用展望。
+- [实验方案与评价口径](experiments/实验方案与口径.md)、[固定实验配置](experiments/config/protocol.json)：样本、参数和评价规则。
+- [主实验结果](experiments/results/baseline_summary.csv)、[配对置信区间](experiments/results/paired_confidence_intervals.csv)：分建筑效果与统计比较。
+- [逐案例任务与排程](experiments/results/schedule_cases.jsonl)、[完整指标表](experiments/results/all_scheduling_metrics.csv)：每项任务及方案的详细记录。
+- [实验覆盖核验](experiments/results/completion_audit.json)、[约束与能量核验](experiments/results/result_audit.json)：实验完整性与方案可行性。
+- [数据来源](DATA.md)、[材料导览](PUBLICATION.md)、[AI 辅助使用说明](reports/AI辅助使用记录.md)、[第三方来源与署名](THIRD_PARTY_NOTICES.md)。
+
+## 结果核验与实验复现
+
+### 离线核验
+
+在仓库根目录使用 Python 3.12 运行，仅需标准库：
 
 ```sh
 python scripts/verify_snapshot.py
 ```
 
-该入口只读已有结果，不反序列化 pickle、不训练或调用求解器。它校验文件清单的 SHA256、案例数量及方法组，并用提交的逐时真实背景和开始时刻独立复算全部评分方案的时间窗口、容量、能量、峰值、削峰量和启动偏移。
+该入口校验文件 SHA256、案例数量及方法组，并利用逐时真实背景和任务开始时刻，独立复算全部评分方案的时间窗口、容量、能量、峰值、削峰量和启动偏移。额外的实验矩阵与调参预算检查见 `experiments/src/audit_completion.py`，该脚本依赖 pandas，并更新完成审计文件。
 
-核验提交结果不等于独立重做全部实验。完整矩阵和调参搜索预算的额外检查见 `experiments/src/audit_completion.py`；它需要 pandas，会重新写入同内容的完成审计文件。
-
-## 2. 安装实验依赖
+### 安装依赖
 
 ```sh
 python -m venv .venv
@@ -57,44 +68,40 @@ Windows PowerShell：
 python -m pip install -r requirements-lock.txt
 ```
 
-锁定文件记录原实验使用的版本。原实验为 Python 3.12.14、macOS / arm64；其他平台需满足 LightGBM 的平台运行库要求。仓库不包含虚拟环境或本机库路径。
+原实验环境为 Python 3.12.14、macOS / arm64，依赖版本见 `requirements-lock.txt`。其他平台需配置 LightGBM 所需的运行库。
 
-## 3. 算法检查与完整重跑
+### 算法检查与完整重跑
 
-先运行 12 项小规模算法检查，包含穷举对照、不可行案例、负情景截断、筛选边界和未来信息隔离：
+运行 12 项小规模算法检查，覆盖穷举对照、不可行案例、负情景截断、筛选边界和未来信息隔离：
 
 ```sh
 python scripts/reproduce.py --mode checks --name checks-01
 ```
 
-完整复现（需要联网下载约 194 MB 的三个原始 CSV）：
+完整复现需联网下载约 194 MB 的三个原始 CSV：
 
 ```sh
 python scripts/reproduce.py --mode full --name full-01 --workers 4
 ```
 
-每次运行写入独立的 `runs/<name>/`，不覆盖提交的 `experiments/results/`。同名运行目录存在时拒绝覆盖，请换一个名称。入口依次执行：固定版本下载与校验 → 算法检查 → 预测训练与消融 → 排程调参及全部案例 → 指标、图表及方案复核 → 零读数诊断 → 实验矩阵审计。终端输出同时保存在运行目录的 `run.log`。
+运行流程依次为：数据下载与校验 → 算法检查 → 预测训练与特征消融 → 排程调参及全部案例 → 指标与图表生成 → 零读数诊断 → 实验矩阵核验。
 
-完成后，结果位于 `runs/full-01/experiments/results/`，图表位于 `runs/full-01/reports/figures/`。该入口生成科学实验结果与图表，不自动改写仓库中的评审报告。中断后，可在确认配置和代码未改变的前提下，直接使用对应运行目录中的 `run_scheduling.py --stage run --workers 4` 继续未完成排程，然后依次运行该目录中的 `analyze.py`、`diagnostics.py`、`audit_completion.py`。
+每次运行使用独立的 `runs/<name>/` 目录，名称须唯一。结果、图表和日志分别位于该目录下的 `experiments/results/`、`reports/figures/` 和 `run.log`；Markdown 报告单独维护。配置与代码保持一致时，中断的排程可通过运行目录中的 `run_scheduling.py --stage run --workers 4` 续跑，再依次执行 `analyze.py`、`diagnostics.py`、`audit_completion.py`。
 
-随机种子和数据版本已固定，但 2 秒墙钟求解预算、浮点运算、平台与求解器差异可能导致可行解或耗时不同。请比较约束、指标和求解状态，不承诺每个开始时刻或计时值逐字节一致。
+数据版本与随机种子固定。限时求解、浮点运算和平台差异可能影响具体启动时刻及耗时，复核以约束满足情况、评价指标和求解状态为准。
 
-## 数据与文件安排
-
-原始数据不直接提交；固定版本、来源 URL、大小和 SHA256 保存在 `experiments/data/raw/manifest.json`，下载入口会核验。已提交的逐时结果含三栋公开别名建筑的背景观测切片，便于离线复核，因此本仓库仍包含公开数据的派生内容；署名和原始许可一并保留。
-
-不附带申报书、个人姓名或联系方式、原始 Word/PDF、聊天记录、绝对本机路径、虚拟环境、运行日志及 pickle 缓存。LightGBM 文本模型可供审查；线性模型和排程中间上下文由完整重跑重新生成。
+## 文件结构
 
 ```text
-experiments/src/        科学实验实现
+experiments/src/        预测、排程与统计实现
 experiments/config/     固定实验协议
-experiments/data/raw/   来源清单与原始许可（不含原始 CSV）
-experiments/results/    提交的结果快照与文本模型
-reports/               Markdown 报告、结果图与 AI 辅助说明
-scripts/               离线结果核验、隔离重跑入口
-MANIFEST.json           公开文件的内容校验和
-requirements-lock.txt  原实验依赖版本
-runs/                   本地重跑输出（自动忽略，不提交）
+experiments/data/raw/   数据来源清单与原始许可
+experiments/results/    实验结果快照与文本模型
+reports/               实验报告、结果图与 AI 辅助说明
+scripts/               离线核验与独立重跑入口
+MANIFEST.json           文件内容校验和
+requirements-lock.txt  实验依赖版本
+runs/                   本地复现输出
 ```
 
-第三方数据条款见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。本仓库整理未为原创代码新增开源许可，也不将第三方数据许可套用于全部代码。
+原始数据由复现入口按固定版本下载，来源、大小与 SHA256 见 `experiments/data/raw/manifest.json`。仓库提供三栋建筑的逐时背景切片、预测及排程结果，便于离线复核；数据署名与许可见 [第三方来源与署名](THIRD_PARTY_NOTICES.md)。

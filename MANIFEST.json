@@ -10,24 +10,24 @@
       "sha256": "cbb07659a04a4f97ed2b10a9c53adabdd6b814ced69daa448fe6b7591aa45d08"
     },
     "DATA.md": {
-      "bytes": 2003,
-      "sha256": "b593e3bd85cd8588e46d33f235e5ab48b29145ba9815ae69917aebfef4a37aac"
+      "bytes": 2219,
+      "sha256": "007f5f8cefad4c2b053cff7bb45732de927c24995737559038a3dfebf1c3ebc1"
     },
     "PUBLICATION.md": {
-      "bytes": 1899,
-      "sha256": "a46dd963b5f5bc266e34358318f038d68d83acf36478dedea5bba52bb798d291"
+      "bytes": 1629,
+      "sha256": "658416e5cdb01b8572b1466db04bc112f77496076f89f2881cd8fc7263e049d6"
     },
     "PUBLICATION_CHECKS.json": {
       "bytes": 1320,
       "sha256": "13533ac4edfc2bc56365105d6991bd93821dd86cf763582617a85fb71ad87957"
     },
     "README.md": {
-      "bytes": 6059,
-      "sha256": "501340db9a1c78217140756c58d2a62cdd766ba1527e1e3d67947080fb035cf0"
+      "bytes": 6516,
+      "sha256": "ec7d3757a1f45189b268acd5d4f6a72a2c957e0979c3c172f9ca26e777189d8f"
     },
     "THIRD_PARTY_NOTICES.md": {
-      "bytes": 989,
-      "sha256": "32b2477bc0d852c59c396bacac4492b3b1dba0e0f3a58f25f962beb4f205d45b"
+      "bytes": 1332,
+      "sha256": "c0780573d933ad349968dd4e3786f1acfc39b8804ffc10b6553fb53d6833ce99"
     },
     "experiments/config/protocol.json": {
       "bytes": 2029,
@@ -266,12 +266,12 @@
       "sha256": "39b5c3eda8a01ba43c7c274805a4ac6772d5ad998597ad41f64ce2223b4b9fb9"
     },
     "experiments/实验方案与口径.md": {
-      "bytes": 3882,
-      "sha256": "ddf869c466d4282cece7dfe677dad318ffd86f32a4da15f0958f93e79a6227cc"
+      "bytes": 4301,
+      "sha256": "63a4e1606f247f5874a1c8f058b7e3019d79714b43b31f96c0b8e995a63e2068"
     },
     "reports/AI辅助使用记录.md": {
-      "bytes": 1124,
-      "sha256": "7666be7cbd6a50f6fbf8334a656c48d2edcc5f3ecd7b96d8619de85bbbb32ec5"
+      "bytes": 1240,
+      "sha256": "9decb5681c696c44478d995dec2a423c12d282f3dec3199daad7684585e347a8"
     },
     "reports/figures/01_forecast_mae.png": {
       "bytes": 62571,
@@ -306,8 +306,8 @@
       "sha256": "043371b8f567a32dc60d51d7f08e081f6408dfaafed7caf4c201e7352052c444"
     },
     "reports/实验报告.md": {
-      "bytes": 34780,
-      "sha256": "4462af68c2c360053fc071fc664845bc1904d7832584cdab7bb6d4106f6b9dc9"
+      "bytes": 33251,
+      "sha256": "73c445873094fef91d7645e054ed416fd6ff359f0d808c2d8240781e1eb1ca1f"
     },
     "requirements-lock.txt": {
       "bytes": 412,
